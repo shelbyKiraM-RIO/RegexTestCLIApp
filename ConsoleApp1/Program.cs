@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -14,16 +15,17 @@ namespace ConsoleApp1
             string input;
             while (true)
             {
-                Console.WriteLine("Give me an input string to test REGEX on:");
+                Console.WriteLine("Give me an input string to test on:");
                 input = Console.ReadLine();
                 Console.WriteLine("The result is:");
-                Console.WriteLine(ProcessPayee(input) + "\n");
+                Console.WriteLine(ProcIn(input) + "\n");
             }
         }
 
-        public static string ProcessPayee(string input)
+        public static string ProcIn(string input)
         {
             // Trying to be smart about my Regex Custom Coding replacements
+            ///*
             string front;
             string back;
 
@@ -39,7 +41,7 @@ namespace ConsoleApp1
             back = refnum.Replace(back, "$1%");
             back = removeTrailing.Replace(front + back, "");
 
-            return back;
+            return back;/**/
         }
     }
 }
